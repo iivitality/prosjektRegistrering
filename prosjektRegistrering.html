@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="prosjektRegistreringCSS.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    </head>
+    <body>
+        <form id = "registrering">
+            <div class="container-fluid" id="row1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                        <label for="">Gmail</label>
+                        <input type="text" class="form-control" name="gmail" id="gmail" aria-describedby="helpId" placeholder="Skriv mailen din her" required>
+                        <small id="helpId" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                        <label for="">Brukernavn</label>
+                        <input type="text" class="form-control" name="" id="brukernavn" aria-describedby="helpId" placeholder="Skriv brukarnavnet ditt her" required>
+                        <small id="helpId" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                        <label for="">Tekst</label>
+                        <input type="text" class="form-control" name="" id="tekst" aria-describedby="helpId" placeholder="Skriv noko her">
+                        <small id="helpId" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                        <label for="">Passord</label>
+                        <input type="text" class="form-control" name="" id="passord" aria-describedby="helpId" placeholder="Skriv passordet ditt her" required> 
+                        <small id="helpId" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+                <div class="row justify-content-center">
+                    <button type = "submit">Søk og bestill</button>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="info"></div>
+                </div>
+            </div>
+        </form>
+        
+        <script>
+            registrering.onsubmit = function(evt) {
+                var row1 = document.getElementById("row1");
+                var info = document.getElementById("info");
+                var gmail = document.getElementById("gmail");
+                var brukernavn = document.getElementById("brukernavn");
+                var tekst = document.getElementById("tekst");
+                var passord = document.getElementById("passord");
+                evt.preventDefault();
+                info.innerHTML += "Gmailen din er: " + gmail.value + "<br>";
+                info.innerHTML += "Teksten du skreiv er: " + tekst.value + "<br>";
+                info.innerHTML += "Brukarnavnet ditt er: " + brukernavn.value + "<br>";
+                info.innerHTML += "Passordet ditt er: " + passord.value;
+            }
+                
+        </script>
+
+
+
+    </body>
+
+</html>
